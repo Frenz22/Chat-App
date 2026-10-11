@@ -28,6 +28,7 @@ function init() {
 // Connect to Socket.io server with token
 function connectToServer() {
     socket = io({
+        transports: ['websocket'],
         query: { token: token }
     });
     
