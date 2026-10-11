@@ -11,7 +11,6 @@ let token = null;
 function init() {
     // Check if user is logged in
     username = localStorage.getItem('chat_username');
-    token = localStorage.getItem('chat_token');
     
     if (!username || !token) {
         // Redirect to login if not authenticated
