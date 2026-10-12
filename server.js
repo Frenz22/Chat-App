@@ -516,6 +516,7 @@ io.on('connection', async (socket) => {
   }
 });
 
+
 if (require.main === module) {
   server.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
@@ -523,4 +524,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = app;
+module.exports = server;
