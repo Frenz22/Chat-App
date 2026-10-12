@@ -517,7 +517,11 @@ io.on('connection', async (socket) => {
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log('Open this URL in your browser to use the chat app');
-});
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+    console.log('Open this URL in your browser to use the chat app');
+  });
+}
+
+module.exports = app;
