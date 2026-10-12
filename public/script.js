@@ -528,6 +528,28 @@ async function deleteTask(taskId) {
     }
 }
 
+/* Mobile Panel Navigation */
+document.querySelectorAll('.mobile-nav-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const container = document.querySelector('.container');
+        const panel = button.dataset.panel;
+
+        container.dataset.activePanel = panel;
+
+        document.querySelectorAll('.mobile-nav-btn').forEach(navButton => {
+            const isActive = navButton === button;
+            navButton.classList.toggle('active', isActive);
+            navButton.setAttribute('aria-pressed', String(isActive));
+        });
+    });
+});
+
+const mobileContainer = document.querySelector('.container');
+
+if (mobileContainer && window.matchMedia('(max-width: 768px)').matches) {
+    mobileContainer.dataset.activePanel = 'chat';
+}
+
 // Make functions globally available
 window.tagMessage = tagMessage;
 window.updateTaskStatus = updateTaskStatus;
