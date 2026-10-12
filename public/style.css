@@ -813,3 +813,76 @@ body {
         overflow-y: auto;
     }
 }
+
+
+/* Mobile Users and Tasks Layout */
+@media (max-width: 768px) {
+    .sidebar,
+    .task-sidebar {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 100%;
+        min-width: 0;
+        padding: 16px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .container[data-active-panel="users"] .sidebar,
+    .container[data-active-panel="tasks"] .task-sidebar {
+        display: flex;
+    }
+
+    .sidebar h2,
+    .task-sidebar h2 {
+        display: block;
+        flex: 0 0 auto;
+        width: 100%;
+        margin: 0 0 14px;
+        font-size: 18px;
+        line-height: 1.4;
+        overflow-wrap: normal;
+        white-space: normal;
+    }
+
+    #onlineUsers,
+    #taskList {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+        gap: 8px;
+    }
+
+    #onlineUsers .user {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 12px;
+        flex: 0 0 auto;
+    }
+
+    #onlineUsers .username {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    #taskList .task {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        flex: 0 0 auto;
+    }
+
+    #taskList .empty-state {
+        width: 100%;
+        padding: 16px 8px;
+        text-align: left;
+    }
+}
+
