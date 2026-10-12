@@ -6,10 +6,10 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const connectDB = require('./database');
-const Message = require('./models/Message');
-const User = require('./models/User');
-const Task = require('./models/Task');
+const connectDB = require('../database');
+const Message = require('../models/Message');
+const User = require('../models/User');
+const Task = require('../models/Task');
 
 // Middleware to verify JWT token
 const authenticateToken = (req, res, next) => {
@@ -44,7 +44,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname)));
 
 // Connect to MongoDB
 connectDB();
